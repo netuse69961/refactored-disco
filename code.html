@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقلب ممتع</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>مرحبًا بكم في مقلبنا!</h1>
+    <p>اضغط على الزر أدناه لبدء المقلب.</p>
+    <button onclick="showJoke()">اضغط هنا!</button>
+    <p id="joke" style="display:none; margin-top: 20px;"></p>
+
+    <script>
+        function showJoke() {
+            const jokes = [
+                "هل سمعت عن الشجرة التي لم تثمر؟ كانت على شجرة عائلة!",
+                "لماذا لا يلعب الكمبيوتر كرة القدم؟ لأنه يخاف من الشبكة!",
+                "هل تعرف لماذا يحب الفيتامين C الفواكه؟ لأنها مليئة بالعصير!"
+            ];
+            const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+            document.getElementById("joke").innerText = randomJoke;
+            document.getElementById("joke").style.display = "block";
+        }
+    </script>
+</body>
+</html>
